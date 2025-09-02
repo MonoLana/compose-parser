@@ -163,23 +163,3 @@ ghost_networks = used_networks - defined_networks
 if ghost_networks:
     print(f"👻 Ghost networks: {ghost_networks}")
 ```
-
-## 🤝 Contributing
-
-Found a bug or want to add a feature? PRs welcome!
-
-1. Fork the repo
-2. Create your feature branch
-3. Add tests for your changes
-4. Make sure all tests pass
-5. Submit a PR
-
-## 📄 License
-
-MIT License - feel free to use in your projects!
-
----
-
-<div align="center">
-Made with ❤️ for the Docker community
-</div>
