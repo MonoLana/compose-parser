@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  frontend:
+    image: my-frontend:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - app-net
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    expose:
+      - "8000"
+    networks:
+      - app-net
+      - db-net # Ghost Network Reference
+
+  db:
+    image: postgres:13
+    networks:
+      - db-net
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+
+networks:
+  app-net:
+    driver: bridge
